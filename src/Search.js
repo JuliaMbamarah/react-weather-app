@@ -1,7 +1,7 @@
 import React from "react";
-export default function Search() {
+export default function Search(props) {
   return (
-    <form id="search-form" class="mb-3">
+    <form id="search-form" className="mb-3">
       <div className="row">
         <div className="col-9">
           <input
@@ -9,7 +9,7 @@ export default function Search() {
             placeholder="Type a city..."
             className="form-control"
             id="city-input"
-            autocomplete="off"
+            onChange={props.updateCity}
           />
         </div>
         <div className="col-3">
@@ -17,6 +17,7 @@ export default function Search() {
             type="submit"
             value="Search"
             className="btn btn-primary w-100"
+            onClick={props.fetchData}
           />
         </div>
       </div>
